@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Frontend Mentor | Todo app</title>
+  </head>
+  <body>
+    <div class="background-image"></div>
+    <div class="main-container">
+      <div class="content-wrapper">
+        <header>
+          <h1 class="header-text">todo</h1>
+          <button class="header-button">
+            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26">
+              <path
+                fill="#FFF"
+                fill-rule="evenodd"
+                d="M13 0c.81 0 1.603.074 2.373.216C10.593 1.199 7 5.43 7 10.5 7 16.299 11.701 21 17.5 21c2.996 0 5.7-1.255 7.613-3.268C23.22 22.572 18.51 26 13 26 5.82 26 0 20.18 0 13S5.82 0 13 0z"
+              />
+            </svg>
+          </button>
+        </header>
+        <main>
+          <div class="input-container">
+            <div class="input-circle"></div>
+            <div class="input-field">
+              <input
+                class="input-tag"
+                type="text"
+                placeholder="Create a new todo"
+              />
+            </div>
+          </div>
+          <div class="todo-container">
+            <div class="todo-movements">
+              <div class="todo-movements-row">
+                <div class="todo-movement-row-left">
+                  <div class="movements-row-check input-circle"></div>
+                  <p class="movements-row-text">Play computer games</p>
+                </div>
+                <img
+                  src="/images/icon-cross.svg"
+                  alt="cross"
+                  class="movements-row-cross"
+                />
+              </div>
+              <div class="todo-movements-row">
+                <div class="todo-movement-row-left">
+                  <div class="movements-row-check input-circle"></div>
+                  <p class="movements-row-text">Do homework</p>
+                </div>
+                <img
+                  src="/images/icon-cross.svg"
+                  alt="cross"
+                  class="movements-row-cross"
+                />
+              </div>
+            </div>
+            <div class="todo-summary">
+              <div class="todo-summary-count">
+                <p class="todo-summary-count-text">
+                  <span class="todo-number">0</span> items left
+                </p>
+              </div>
+              <div class="todo-summary-sort">
+                <p id="sort-all" class="todo-sort">All</p>
+                <p id="sort-active" class="todo-sort">Active</p>
+                <p id="sort-completed" class="todo-sort">Completed</p>
+              </div>
+              <div class="todo-summary-actions">
+                <p id="action-clear" class="todo-action">Clear Completed</p>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
