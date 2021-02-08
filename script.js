@@ -2,8 +2,15 @@
 
 const inputTag = document.querySelector(".input-tag");
 const todos = document.querySelector(".todo-movements");
-let deleteButton = document.querySelectorAll(".movements-row-cross");
+const todosLeft = document.querySelector(".todo-number");
 
+function todosCountRefresh() {
+  todosLeft.innerHTML = document.querySelectorAll(".todo-incomplete").length;
+}
+
+todosCountRefresh();
+
+// Add an item to the list
 inputTag.addEventListener("keypress", (e) => {
   if (e.key === "Enter") {
     if (inputTag.value) {
@@ -21,12 +28,30 @@ inputTag.addEventListener("keypress", (e) => {
     </div>`;
       todos.insertAdjacentHTML("afterbegin", html);
       inputTag.value = "";
+      todosCountRefresh();
     }
   }
 });
 
 todos.addEventListener("click", function (e) {
+  if (e.target.classList.contains("todo-movements-row")) {
+    if (e.target.parentNode.parentNode.classList.contains("todo-completed")) {
+      e.target.parentNode.parentNode.classList.remove("todo-completed");
+      e.target.parentNode.parentNode.classList.add("todo-incomplete");
+      // refresh the items left
+      todosCountRefresh();
+    } else if (
+      e.target.parentNode.parentNode.classList.contains("todo-incomplete")
+    ) {
+      e.target.parentNode.parentNode.classList.add("todo-complete");
+      e.target.parentNode.parentNode.classList.remove("todo-incomplete");
+      // refresh the items left
+      todosCountRefresh();
+    }
+  }
+  // Remove an item
   if (e.target.classList.contains("movements-row-cross")) {
     e.target.parentNode.remove();
   }
+  todosCountRefresh();
 });
