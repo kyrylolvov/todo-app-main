@@ -9,8 +9,9 @@ function todosCountRefresh() {
   if (document.querySelectorAll(".todo-incomplete").length === 5) {
     alert("Too many tasks!");
     document.querySelectorAll(".todo-movements-row")[0].remove();
+     todosLeft.innerHTML =
+      document.querySelectorAll(".todo-incomplete").length - 1;
   }
-  todosLeft.innerHTML = document.querySelectorAll(".todo-incomplete").length;
 }
 
 todosCountRefresh();
