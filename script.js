@@ -6,7 +6,7 @@ const todosLeft = document.querySelector(".todo-number");
 
 function todosCountRefresh() {
   todosLeft.innerHTML = document.querySelectorAll(".todo-incomplete").length;
-  if (document.querySelectorAll(".todo-incomplete").length === 6) {
+  if (document.querySelectorAll(".todo-incomplete").length === 5) {
     alert("Too many tasks!");
     document.querySelectorAll(".todo-movements-row")[0].remove();
   }
