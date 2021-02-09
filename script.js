@@ -28,6 +28,7 @@ inputTag.addEventListener("keypress", (e) => {
     </div>`;
       todos.insertAdjacentHTML("afterbegin", html);
       inputTag.value = "";
+//   Refresh todo count
       todosCountRefresh();
     }
   }
